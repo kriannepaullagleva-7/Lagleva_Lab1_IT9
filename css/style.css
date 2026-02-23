@@ -1,0 +1,245 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #e6f0ff;
+  --panel: #ffffff;
+  --panel-2: rgba(0, 123, 255, 0.05);
+  --text: #1a1a1a;
+  --muted: #555555;
+  --border: #d0e0ff;
+  --border-soft: rgba(0, 123, 255, 0.12);
+  --shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+
+  --accent: #007bff;
+  --accent-2: #0056b3;
+
+  --r-sm: 10px;
+  --r-md: 14px;
+  --r-lg: 22px;
+}
+
+body {
+  margin: 0;
+  padding: 40px;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 16px;
+}
+
+body > * {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: 32px;
+  margin: 0 0 24px;
+  font-weight: 700;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Flex panels */
+div[style*="display:flex"] {
+  background: var(--panel);
+  padding: 20px;
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow);
+  gap: 12px;
+}
+
+div[style*="display:flex"] a {
+  display: inline-block;
+  padding: 14px 22px;
+  border-radius: var(--r-sm);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+  background: var(--panel-2);
+  border: 1px solid var(--border-soft);
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+div[style*="display:flex"] a:hover {
+  background: rgba(0, 123, 255, 0.2);
+  border-color: rgba(0, 123, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+hr {
+  border: none;
+  border-top: 2px solid var(--border-soft);
+  margin: 20px 0 28px;
+}
+
+ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  padding: 0;
+  margin: 24px 0 0;
+  list-style: none;
+}
+
+ul li {
+  background: var(--panel);
+  padding: 28px;
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow);
+  font-size: 16px;
+}
+
+ul li b {
+  display: block;
+  margin-top: 10px;
+  font-size: 30px;
+  color: var(--accent);
+}
+
+form {
+  background: var(--panel);
+  padding: 32px;
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow);
+  margin-top: 28px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 15px;
+  color: var(--muted);
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 16px;
+  border-radius: var(--r-sm);
+  border: 1px solid var(--border);
+  background: #f5f9ff;
+  color: var(--text);
+  margin-bottom: 22px;
+  font-size: 16px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: rgba(0, 123, 255, 0.8);
+  box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.22);
+}
+
+button,
+input[type="submit"],
+p a,
+a[href*="_add.php"],
+a[href*="create.php"] {
+  display: inline-block;
+  padding: 16px 24px;
+  border-radius: var(--r-md);
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 16px;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+button:hover,
+input[type="submit"]:hover,
+p a:hover,
+a[href*="_add.php"]:hover,
+a[href*="create.php"]:hover {
+  background: var(--accent-2);
+  border-color: var(--accent-2);
+  transform: translateY(-2px);
+}
+
+p {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  font-size: 16px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--panel);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  margin-top: 28px;
+  box-shadow: var(--shadow);
+}
+
+th {
+  text-align: left;
+  padding: 18px;
+  font-size: 15px;
+  background: var(--panel-2);
+  color: var(--muted);
+}
+
+td {
+  padding: 18px;
+  font-size: 16px;
+  color: var(--text);
+  border-top: 1px solid var(--border-soft);
+}
+
+tr:hover td {
+  background: rgba(0, 123, 255, 0.05);
+}
+
+.pill,
+.status {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.actions td a[href*="edit.php"] {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 14px;
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+  background: rgba(0, 123, 255, 0.08);
+  border: 1px solid rgba(0, 123, 255, 0.16);
+  color: var(--text);
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+td a[href*="edit.php"]:hover {
+  background: rgba(0, 123, 255, 0.18);
+  border-color: rgba(0, 123, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+forms form button[type="submit"] {
+  min-width: 180px;
+  font-size: 16px;
+  padding: 16px 24px;
+}
