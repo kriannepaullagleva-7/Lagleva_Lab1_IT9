@@ -38,10 +38,10 @@ if (isset($_POST['update'])) {
  
 <form method="post">
   <label>Full Name*</label><br>
-  <input type="text" name="full_name" value="<?php echo $client['full_name']; ?>"><br><br>
+  <input type="text" name="full_name" value="<?php echo $client['full_name']; ?>" required><br><br>
  
   <label>Email*</label><br>
-  <input type="text" name="email" value="<?php echo $client['email']; ?>"><br><br>
+  <input type="email" name="email" value="<?php echo $client['email']; ?>" required><br><br>
  
   <label>Phone</label><br>
   <input type="text" name="phone" value="<?php echo $client['phone']; ?>"><br><br>
@@ -49,7 +49,7 @@ if (isset($_POST['update'])) {
   <label>Address</label><br>
   <input type="text" name="address" value="<?php echo $client['address']; ?>"><br><br>
  
-  <button type="submit" name="update">Update</button>
+  <button class="btn" type="submit" name="update">Update</button>
 </form>
 </body>
 </html>

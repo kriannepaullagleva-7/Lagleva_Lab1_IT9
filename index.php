@@ -12,7 +12,7 @@ $revenue = $revRow['s'];
 <head>
   <meta charset="utf-8">
   <title>Dashboard</title>
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <?php include "nav.php"; ?>

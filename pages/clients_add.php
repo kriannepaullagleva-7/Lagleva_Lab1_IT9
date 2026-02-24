@@ -32,10 +32,10 @@ if (isset($_POST['save'])) {
  
 <form method="post">
   <label>Full Name*</label><br>
-  <input type="text" name="full_name"><br><br>
+  <input type="text" name="full_name" required><br><br>
  
   <label>Email*</label><br>
-  <input type="text" name="email"><br><br>
+  <input type="email" name="email" required><br><br>
  
   <label>Phone</label><br>
   <input type="text" name="phone"><br><br>
@@ -43,7 +43,7 @@ if (isset($_POST['save'])) {
   <label>Address</label><br>
   <input type="text" name="address"><br><br>
  
-  <button type="submit" name="save">Save</button>
+  <button class="btn" type="submit" name="save">Save</button>
 </form>
 </body>
 </html>

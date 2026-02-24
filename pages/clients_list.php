@@ -9,10 +9,13 @@ $result = mysqli_query($conn, "SELECT * FROM clients ORDER BY client_id DESC");
 <body>
 <?php include "../nav.php"; ?>
  
-<h2>Clients</h2>
-<p><a href="clients_add.php">+ Add Client</a></p>
- 
-<table border="1" cellpadding="8">
+<div class="top-bar">
+  <h2>Clients</h2>
+
+  <a href="clients_add.php" class="btn">+ Add Client</a>
+</div>
+
+<table>
   <tr>
     <th>ID</th><th>Name</th><th>Email</th><th>Phone</th><th>Action</th>
   </tr>
@@ -22,7 +25,7 @@ $result = mysqli_query($conn, "SELECT * FROM clients ORDER BY client_id DESC");
       <td><?php echo $row['full_name']; ?></td>
       <td><?php echo $row['email']; ?></td>
       <td><?php echo $row['phone']; ?></td>
-      <td>
+      <td class="actions">
         <a href="clients_edit.php?id=<?php echo $row['client_id']; ?>">Edit</a>
       </td>
     </tr>
