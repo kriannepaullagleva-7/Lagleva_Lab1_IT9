@@ -18,7 +18,6 @@ $revenue = $revRow['s'];
 <?php include "nav.php"; ?>
 
 <h2>Dashboard</h2>
-
 <ul>
   <li>Total Clients: <b><?php echo $clients; ?></b></li>
   <li>Total Services: <b><?php echo $services; ?></b></li>
